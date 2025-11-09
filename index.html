@@ -1,44 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-
-  <!-- Correct Redirect -->
-  <meta http-equiv="refresh" content="0; url=https://moistore-calc-tools.github.io/MoiPHstore/">
-
-  <style>
-    body {
-      background: #000;
-      color: #fff;
-      display: flex;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, sans-serif;
-      text-align: center;
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="0; url=https://moistore-calc-tools.github.io/MoiPHstore/">
+<style>
+  html,body{height:100%;margin:0;background:#0b0c10;color:#e9edf3;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
+  .card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+        width:min(94vw,520px);text-align:center;background:#12141a;border:1px solid rgba(255,255,255,.08);
+        padding:22px;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.35)}
+  h1{margin:0 0 8px;font-size:28px}
+  p{margin:6px 0 16px;opacity:.9}
+  a{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;
+    border:1px solid rgba(135,185,255,.35);color:#d7e7ff;background:rgba(24,119,242,.14)}
+</style>
+<script>
+  (function(){
+    // Hard redirect to avoid history clutter and loops
+    var target = "https://moistore-calc-tools.github.io/MoiPHstore/";
+    // Prevent redirect loop if already on target
+    if (location.href.replace(/\/+$/,'') !== target.replace(/\/+$/,'')) {
+      window.location.replace(target);
     }
-    .box {
-      opacity: 0.8;
-      padding: 20px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    a {
-      color: #4da3ff;
-      text-decoration: underline;
-    }
-  </style>
-
+  })();
+</script>
 </head>
 <body>
-  <div class="box">
-    <h2>Redirecting...</h2>
-    <p>If you're not redirected automatically,<br>
-    click below 👇</p>
-    <a href="https://moistore-calc-tools.github.io/MoiPHstore/">Go to Store</a>
+  <div class="card">
+    <h1>Redirecting…</h1>
+    <p>If you’re not redirected automatically,<br>click below 👇</p>
+    <p><a href="https://moistore-calc-tools.github.io/MoiPHstore/">Go to Store</a></p>
   </div>
 </body>
 </html>
