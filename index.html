@@ -35,6 +35,16 @@
       <div class="note" id="hint">Enter at least 1,000 dias, then type your server.</div>
     </div>
 
+    <!-- STOCK BAR -->
+    <div id="stockBar" class="stockBar">
+      <div class="stockLeft">
+        <span class="boxIco">📦</span>
+        <span class="stockLabel">Total Stock:</span>
+        <strong id="totalStock">—</strong>
+      </div>
+      <button id="openStock" class="qrBtn"><span id="stockDiamond">💎</span> View Stock</button>
+    </div>
+
     <!-- Payments -->
     <div class="pay">
       <div class="rowPay" id="gcashRow">
@@ -55,7 +65,7 @@
             <rect width="32" height="32" rx="16" fill="url(#goTeal)"/>
             <path d="M10.5 16a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0zm2.6 0a2.9 2.9 0 1 0 5.8 0 2.9 2.9 0 0 0-5.8 0z" fill="#00353A" opacity=".95"/>
           </svg>
-          GoTyme • <strong>014664932955 — MOISES BITONIO</strong>
+          GoTyme • <strong>014664932955 — MOISEES BITONIO</strong>
         </div>
         <button class="qrBtn" id="showGoQR">🧾 Show QR</button>
       </div>
@@ -89,6 +99,34 @@
         <button class="qrBtn" id="goNow">Go now</button>
       </div>
     </div>
+
+    <!-- STOCK MODAL -->
+    <div class="modal" id="stockModal">
+      <div class="card">
+        <h3>Ymir Stock</h3>
+        <div class="note" id="editHint" style="margin-bottom:8px">
+          Tip: 5 taps on the 💎 icon to toggle <b>Edit Mode</b>. Buyers only see read-only.
+        </div>
+        <div class="tableWrap">
+          <table id="stockTable" class="stockTable">
+            <thead>
+              <tr><th>Server</th><th>Qty</th><th>Price /1k</th><th class="editCol">Actions</th></tr>
+            </thead>
+            <tbody id="stockBody"></tbody>
+          </table>
+        </div>
+
+        <div id="adminBar" class="adminBar" style="display:none">
+          <button class="qrBtn" id="addRow">+ Add server</button>
+          <button class="qrBtn" id="saveStock">💾 Save</button>
+          <button class="qrBtn" id="cancelEdit">✖ Cancel</button>
+        </div>
+
+        <div class="note" id="totalNote" style="margin-top:10px"></div>
+        <button class="qrBtn" onclick="closeModals()">Close</button>
+      </div>
+    </div>
+
   </div>
 
   <script src="app.js"></script>
