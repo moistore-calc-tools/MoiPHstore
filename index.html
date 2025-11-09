@@ -1,36 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Redirecting…</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0; url=https://moistore-calc-tools.github.io/MoiPHstore/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoiPH Store 💎</title>
 <style>
-  html,body{height:100%;margin:0;background:#0b0c10;color:#e9edf3;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
-  .card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-        width:min(94vw,520px);text-align:center;background:#12141a;border:1px solid rgba(255,255,255,.08);
-        padding:22px;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.35)}
-  h1{margin:0 0 8px;font-size:28px}
-  p{margin:6px 0 16px;opacity:.9}
-  a{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;
-    border:1px solid rgba(135,185,255,.35);color:#d7e7ff;background:rgba(24,119,242,.14)}
+body { background:#0f0f14;color:#fff;font-family:Arial;padding:20px;text-align:center; }
+h1 { font-size:28px;margin-bottom:12px; }
+input,button { width:90%;padding:12px;margin-top:10px;border-radius:8px;border:none;font-size:18px; }
+button { background:#21d072;color:#001b0c;font-weight:bold; }
+.rateBox {margin-top:18px;padding:12px;border:1px solid #444;border-radius:8px;}
 </style>
-<script>
-  (function(){
-    // Hard redirect to avoid history clutter and loops
-    var target = "https://moistore-calc-tools.github.io/MoiPHstore/";
-    // Prevent redirect loop if already on target
-    if (location.href.replace(/\/+$/,'') !== target.replace(/\/+$/,'')) {
-      window.location.replace(target);
-    }
-  })();
-</script>
 </head>
 <body>
-  <div class="card">
-    <h1>Redirecting…</h1>
-    <p>If you’re not redirected automatically,<br>click below 👇</p>
-    <p><a href="https://moistore-calc-tools.github.io/MoiPHstore/">Go to Store</a></p>
-  </div>
+
+<h1>MoiPH Store 💎</h1>
+<p>Legend of Ymir Diamond Calculator</p>
+
+<label>Enter Diamonds 💎</label>
+<input type="number" id="dias" placeholder="e.g. 1500">
+
+<label>Server Name</label>
+<input type="text" id="server" placeholder="e.g. ASIA-002 / HOF-1">
+
+<div class="rateBox">
+<div>Rate: <span id="rate">₱0.80</span></div>
+<div>Total: <span id="total">—</span></div>
+</div>
+
+<button onclick="buy()">💎 Buy Now</button>
+
+<script>
+document.getElementById('dias').addEventListener('input', calc);
+function calc(){
+let d = Number(document.getElementById('dias').value);
+let rate = (d>=8000?0.70:(d>=4000?0.75:0.80));
+document.getElementById('rate').innerText = "₱"+rate.toFixed(2);
+document.getElementById('total').innerText = "₱"+(d*rate).toLocaleString();
+}
+function buy(){
+let dias = document.getElementById('dias').value;
+let server = document.getElementById('server').value;
+let msg = encodeURIComponent(`ORDER FORM\nServer: ${server}\nDiamonds: ${dias}`);
+window.location.href = "https://m.me/mbitonio?text=" + msg;
+}
+</script>
+
 </body>
 </html>
